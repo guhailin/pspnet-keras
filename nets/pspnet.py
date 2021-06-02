@@ -6,12 +6,13 @@ from keras.models import *
 from nets.mobilenetv2 import get_mobilenet_encoder
 from nets.resnet50 import get_resnet50_encoder
 import keras.backend  as K
+import numpy as np
 
 
 def resize_images(args):
     x = args[0]
     y = args[1]
-    return tf.image.resize_images(x, (K.int_shape(y)[1], K.int_shape(y)[2]), align_corners=True)
+    return tf.image.resize(x, (K.int_shape(y)[1], K.int_shape(y)[2]))
 
 def pool_block(feats, pool_factor, out_channel):
     h = K.int_shape(feats)[1]

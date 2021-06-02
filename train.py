@@ -148,7 +148,7 @@ if __name__ == "__main__":
             raise ValueError("数据集过小，无法进行训练，请扩充数据集。")
 
         print('Train on {} samples, val on {} samples, with batch size {}.'.format(len(train_lines), len(val_lines), Batch_size))
-        model.fit_generator(gen,
+        model.fit(gen,
                 steps_per_epoch=epoch_size,
                 validation_data=gen_val,
                 validation_steps=epoch_size_val,
