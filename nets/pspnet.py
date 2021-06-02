@@ -5,6 +5,7 @@ from keras.models import *
 
 from nets.mobilenetv2 import get_mobilenet_encoder
 from nets.resnet50 import get_resnet50_encoder
+import keras.backend  as K
 
 
 def resize_images(args):
